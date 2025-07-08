@@ -1,0 +1,42 @@
+---
+const { href = "#" } = Astro.props;
+---
+
+<style>
+  .badge-shine {
+    background: linear-gradient(110deg, #000000, 45%, #4d4b4b, 55%, #000);
+    background-size: 250% 100%;
+    animation: background-shine 6s linear infinite;
+  }
+
+  @keyframes background-shine {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -200% 0;
+    }
+  }
+</style>
+
+<a
+  {...Astro.props}
+  href={href}
+  target="_blank"
+  rel="noopener noreferrer"
+  role="link"
+  class="
+    inline-flex items-center justify-center gap-2
+    px-4 py-1
+    text-gray-300 text-sm font-medium
+    transition
+    border border-gray-800 rounded-full
+    bg-black badge-shine
+    hover:bg-gray-900 hover:border-gray-700 hover:text-white
+    focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2
+    active:bg-black
+    max-w-fit
+  "
+>
+  <slot />
+</a>

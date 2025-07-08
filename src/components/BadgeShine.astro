@@ -1,0 +1,42 @@
+---
+// Props opcionales: texto e href para hacerlo link
+const { text = "LinkedIn", href = "#" } = Astro.props;
+---
+
+<style>
+  .badge-shine {
+    display: inline-flex;
+    height: 100%;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    border: 1px solid #2d2d2d;
+    background: linear-gradient(110deg, #000, 45%, #4d4b4b, 55%, #000);
+    background-size: 250% 100%;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #d1d5db;
+    animation: background-shine 2s linear infinite;
+  }
+
+  @keyframes background-shine {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -200% 0;
+    }
+  }
+</style>
+
+<a
+  href={href}
+  target="_blank"
+  rel="noopener noreferrer"
+  role="link"
+  class="badge-shine"
+>
+  {text}
+</a>

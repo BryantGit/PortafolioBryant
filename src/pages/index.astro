@@ -4,6 +4,11 @@ import Layout from '../layouts/Layout.astro';
 import "../styles/global.css";
 import logo from '../assets/logo.png';
 import yonne from '../assets/yone.jpeg';
+import EmailIcon from '../assets/icons/Email.astro';
+import LinkedInIcon from '../assets/icons/LinkedIn.astro';
+import GithubIcon from '../assets/icons/GitHub.astro';
+import Socials from '../components/Socials.astro';
+import BadgeShine from '../components/BadgeShine.astro';
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -34,15 +39,20 @@ import yonne from '../assets/yone.jpeg';
                 <span class="text-purple-400 font-semibold">tecnologías modernas de Microsoft</span> y 
                 <span class="text-yellow-300 font-semibold">JavaScript</span>.
             </p>
-            <p class="mt-2 text-sm text-white/50 italic">
+            <p class="mt-2 text-sm text-white/50 italic mb-3">
                 Actualmente me encuentro aprendiendo <span class="text-sky-400 font-semibold">React</span> para ampliar mis habilidades.
             </p>
-            <ul>
-                <li></li>
-            </ul>
-<span class='inline-flex h-full animate-background-shine cursor-pointer items-center justify-center rounded-full border border-gray-800 bg-[linear-gradient(110deg,#000,45%,#4D4B4B,55%,#000)] bg-[length:250%_100%] px-3 py-1 text-xs font-medium text-gray-300'>
-      Badge Text
-    </span>
+
+            <nav class="flex gap-x-2">
+                <Socials href="https://www.linkedin.com/in/bryant-ponce/" title="LinkedIn">
+                    <LinkedInIcon class="w-6 h-6 text-white" /> LinkedIn
+                </Socials>
+                <Socials href="https://github.com/BryantGit" title="GitHub">
+                    <GithubIcon class="w-6 h-6 text-white" /> GitHub
+                </Socials>
+            </nav>
+           
+
             </section>
     </main>
 </Layout>
