@@ -1,0 +1,34 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCE = [
+  {
+    date: "Junio 2024 - Junio 2025",
+    title: "Desarrollador Web Full Stack",
+    company: "Hunika",
+    description:
+      "Divulgo sobre programación y desarrollo web en diferentes plataformas. Galardonado como mejor creador de contenido de habla no-inglesa en 2022 y mejor comunidad en 2023 por GitHub.",
+    technologies: [
+      { name: "React", icon: "/icons/react.svg", color: "bg-blue-600 text-white" },
+      { name: "Node.js", icon: "/icons/node.svg", color: "bg-green-600 text-white" },
+      { name: ".NET", icon: "/icons/dotnet.svg", color: "bg-purple-600 text-white" },
+    ]
+  },
+  {
+    date: "Septiembre 2022",
+    title: "Principal Frontend Engineer",
+    company: "Adevinta Spain",
+    description:
+      "Responsable de la plataforma, componentes y utilidades para la creación y desarrollo de aplicaciones web. Mejora de un 30% en la entrega de software. Implantación de medidas de integración continua y despliegue con A/B testing en más de 15 equipos.",
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
