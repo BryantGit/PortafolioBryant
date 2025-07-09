@@ -1,29 +1,59 @@
 ---
+import GitHub from "../assets/icons/GitHub.astro"
+import LinkedIn from "../assets/icons/LinkedIn.astro"
+import CVEN from "../assets/files/CV_Bryant_Ponce_EN.pdf"
+import CVES from "../assets/files/CV_Bryant_Ponce_ES.pdf"
+
+
 const currentYear = new Date().getFullYear()
 ---
 
 <footer
-  class="opacity-80 m-4 min-[375px]:pl-4 md:pl-0 mt-16 w-full mx-auto container lg:max-w-4xl md:max-w-2xl mb-10 flex justify-center"
+  class="opacity-80 m-4 min-[375px]:pl-4 md:pl-0 mt-16 w-full mx-auto container lg:max-w-4xl md:max-w-2xl mb-10 flex flex-col md:flex-row justify-between items-center"
 >
-  <div
-    class="rounded-lg w-full max-w-screen-xl mx-auto md:flex md:items-center md:justify-between py-4"
-  >
-    <span class="text-sm sm:text-center text-zinc-800/90 dark:text-zinc-200/90"
-      >© {currentYear}
-      <a href="https://midu.dev/" class="hover:underline">midudev</a>. Casi
-      todos los derechos reservados
+  <div class="mb-4 md:mb-0 text-center md:text-left">
+    <span class="text-sm text-zinc-800/90 dark:text-zinc-200/90">
+      © {currentYear} <a class="hover:underline">Bryant Ponce</a>. Algunos derechos reservados
     </span>
-    <ul
-      class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0"
-    >
-      <li>
-        <a href="/#sobre-mi" class="hover:underline me-4 md:me-6">Sobre mí</a>
-      </li>
-      <li>
-        <a id="contacto" href="mailto:miduga@gmail.com" class="hover:underline"
-          >Contacto</a
-        >
-      </li>
-    </ul>
+    <p class="mt-1 text-xs italic text-gray-500 dark:text-gray-400">Creando soluciones con pasión</p>
+  </div>
+
+  <ul class="flex flex-wrap items-center text-sm font-medium dark:text-white/90 gap-6">
+    <li>
+      <a id="contacto" href="mailto:bryant_ponce@outlook.com" class="hover:underline" aria-label="Enviar correo a Bryant Ponce">Contacto</a>
+    </li>
+     <li>
+      <a
+        href={CVES}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:underline"
+        aria-label="Descargar CV en Español"
+      >
+       CV-Español
+      </a>
+    </li>
+    <li>
+      <a
+        href={CVEN}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:underline"
+        aria-label="Download CV in English"
+      >
+        CV-English
+      </a>
+    </li>
+  </ul>
+
+  <div class="flex gap-4 mt-4 md:mt-0">
+    <a href="https://linkedin.com/in/bryant-ponce" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="hover:text-blue-600 dark:hover:text-blue-400">
+      <!-- Puedes reemplazar con tu SVG o componente LinkedIn -->
+       <LinkedIn></LinkedIn>
+    </a>
+    <a href="https://github.com/BryantGit" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="hover:text-gray-900 dark:hover:text-gray-200">
+      <!-- Reemplaza por tu SVG o icono GitHub -->
+      <GitHub></GitHub>  
+    </a>
   </div>
 </footer>
