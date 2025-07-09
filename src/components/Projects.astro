@@ -1,0 +1,38 @@
+---
+import ProjectItem from "./ProjectsItem.astro"
+
+const PROJECTS = [
+  {
+    name: "Portafolio personal",
+    description: "Sitio web con mis trabajos y experiencia, desarrollado con Astro, TailwindCSS y desplegado en Vercel.",
+    technologies: [
+      { name: "Astro", icon: "/icons/astro.svg", color: "bg-purple-600 text-white" },
+      { name: "TailwindCSS", icon: "/icons/tailwind.svg", color: "bg-cyan-500 text-white" },
+      { name: "Vercel", icon: "/icons/vercel.svg", color: "bg-black text-white" },
+    ],
+    github: "https://github.com/tuusuario/portafolio",
+    demo: "https://tusitio.com"
+  },
+  {
+    name: "API para gestión de inventario",
+    description: "API RESTful construida en .NET 7 para manejar el flujo de inventario de una empresa con autenticación JWT.",
+    technologies: [
+      { name: ".NET", icon: "/icons/dotnet.svg", color: "bg-purple-600 text-white" },
+      { name: "SQL Server", icon: "/icons/sqlserver.svg", color: "bg-red-600 text-white" },
+      { name: "JWT", icon: "/icons/jwt.svg", color: "bg-yellow-500 text-black" },
+    ],
+    github: "https://github.com/tuusuario/inventario-api",
+    demo: ""
+  },
+]
+---
+
+<section class="container mx-auto px-4 py-12">
+  <div class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+    {
+      PROJECTS.map((project) => (
+        <ProjectItem {...project} />
+      ))
+    }
+  </div>
+</section>
