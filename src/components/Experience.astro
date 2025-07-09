@@ -1,24 +1,43 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro"
+
 const EXPERIENCE = [
   {
     date: "Junio 2024 - Junio 2025",
     title: "Desarrollador Web Full Stack",
     company: "Hunika",
-    description:
-      "Divulgo sobre programación y desarrollo web en diferentes plataformas. Galardonado como mejor creador de contenido de habla no-inglesa en 2022 y mejor comunidad en 2023 por GitHub.",
+    description: [
+      "Desarrollo de aplicaciones web escalables con Angular y C#.",
+      "Implementación de arquitectura multicapa siguiendo SOLID y Clean Code.",
+      "Integración de APIs externas y sistemas internos.",
+      "Gestión de versiones y CI/CD en Azure DevOps."
+    ],
     technologies: [
-      { name: "React", icon: "/icons/react.svg", color: "bg-blue-600 text-white" },
+      { name: "Angular", icon: "/icons/react.svg", color: "bg-blue-600 text-white" },
       { name: "Node.js", icon: "/icons/node.svg", color: "bg-green-600 text-white" },
       { name: ".NET", icon: "/icons/dotnet.svg", color: "bg-purple-600 text-white" },
-    ]
+      { name: "SQL", icon: "/icons/dotnet.svg", color: "bg-purple-600 text-white" },
+      { name: "Azure DevOps", icon: "/icons/dotnet.svg", color: "bg-purple-600 text-white" },
+      { name: "GitHub", icon: "/icons/dotnet.svg", color: "bg-purple-600 text-white" },
+    ],
   },
   {
-    date: "Septiembre 2022",
-    title: "Principal Frontend Engineer",
-    company: "Adevinta Spain",
-    description:
-      "Responsable de la plataforma, componentes y utilidades para la creación y desarrollo de aplicaciones web. Mejora de un 30% en la entrega de software. Implantación de medidas de integración continua y despliegue con A/B testing en más de 15 equipos.",
+    date: "Marzo 2024 - Junio 2024",
+    title: "Consultor IT",
+    company: "Magna Cosma",
+    description: [
+      "Mantenimiento y desarrollo de aplicaciones web y de escritorio.",
+      "Diseño de bases de datos y desarrollo de APIs REST.",
+      "Colaboración con departamentos para traducir requisitos en soluciones.",
+      "Liderazgo en nuevos proyectos desde análisis hasta implementación." 
+    ],
+    technologies: [
+      { name: "Angular", icon: "/icons/react.svg", color: "bg-blue-600 text-white" },
+      { name: "Node.js", icon: "/icons/node.svg", color: "bg-green-600 text-white" },
+      { name: ".NET", icon: "/icons/dotnet.svg", color: "bg-purple-600 text-white" },
+      { name: "SAP", icon: "/icons/dotnet.svg", color: "bg-purple-600 text-white" },
+      { name: "SQL", icon: "/icons/dotnet.svg", color: "bg-purple-600 text-white" },
+    ],
   },
 ]
 ---
@@ -26,7 +45,7 @@ const EXPERIENCE = [
 <ol class="relative mt-16">
   {
     EXPERIENCE.map((experience) => (
-      <li class="">
+      <li>
         <ExperienceItem {...experience} />
       </li>
     ))

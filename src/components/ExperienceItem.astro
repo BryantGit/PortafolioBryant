@@ -6,10 +6,11 @@ interface Technology {
   icon?: string
   color?: string
 }
+
 interface Props {
   title: string
   company: string
-  description: string
+  description: string[];
   technologies?: Technology[]
   date: string
 }
@@ -32,7 +33,16 @@ const { title, company, description, technologies, date } = Astro.props
     </div>
   </div>
   <div class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3">
-    {description}
+       <ul class="list-disc ml-5 space-y-1">
+    {description.map(point => (
+      <li>{point}</li>
+    ))}
+  </ul>
+
+
+
+
+
     {
      technologies && (
       <div class="flex flex-wrap gap-2">
