@@ -17,14 +17,14 @@ import '@fontsource-variable/onest';
 	</head>
 	<body>
 		<!-- Background gradient 
-		-->
 		<div class="fixed inset-0 z-[-2] h-screen w-screen bg-black bg-[radial-gradient(ellipse_100%_100%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+		-->
 
-		<!-- Animated background elements -->
+		<!-- Animated background elements 
 		<div class="absolute w-10 h-4 bg-blue-500 rounded-full opacity-20 animate-ping" style="top: 20vh; left: 30vw"></div>
     <div class="absolute w-16 h-4 bg-purple-500 rounded-full opacity-10 animate-pulse" style="top: 60vh; left: 65vw"></div>
     <div class="absolute w-8 h-4 bg-pink-500 rounded-full opacity-30 animate-bounce" style="top: 50vh; left: 25vw"></div>
-
+-->
 		
 		<Header/>
 		<slot />
@@ -34,6 +34,9 @@ import '@fontsource-variable/onest';
 
 <style is:global>
       :root {
+        --text-light: rgba(17, 17, 17, 0.9);
+        --text-dark: rgba(255, 255, 255, 0.9);
+        --accent-color: #3b82f6;
         color-scheme: light dark;
       }
 
@@ -43,11 +46,13 @@ import '@fontsource-variable/onest';
       }
 
       body {
-        color: rgba(17, 17, 17, 0.9);
+        
         display: flex;
         flex-direction: column;
         min-height: 100vh;
         overscroll-behavior: none;
+        color: var(--text-light);
+        background-color: #fff;
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -58,7 +63,8 @@ import '@fontsource-variable/onest';
 
       @media (prefers-color-scheme: dark) {
         body {
-          color: rgba(255, 255, 255, 0.9);
+          color: var(--text-dark);
+          background-color: #121212;
         }
       }
 
@@ -66,6 +72,18 @@ import '@fontsource-variable/onest';
         animation: blur linear both 0.5s;
         animation-timeline: scroll();
         animation-range: 0 500px;
+      }
+     
+
+      h1, h2, h3 {
+        font-weight: 600;
+        line-height: 1.2;
+        margin-bottom: 0.5em;
+      }
+
+      p {
+        line-height: 1.6;
+        margin-bottom: 1rem;
       }
 
       @keyframes blur {

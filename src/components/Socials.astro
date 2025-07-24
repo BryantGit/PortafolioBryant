@@ -4,16 +4,16 @@ const { href = "#" } = Astro.props;
 
 <style>
   .badge-shine {
-    background: linear-gradient(110deg, #000000, 45%, #4d4b4b, 55%, #000);
-    background-size: 250% 100%;
+    background: linear-gradient(120deg, #1a1a1a 40%, #2c2c2c, #1a1a1a);
+    background-size: 200% 100%;
     animation: background-shine 6s linear infinite;
   }
 
   @keyframes background-shine {
-    from {
-      background-position: 0 0;
+    0% {
+      background-position: 200% 0;
     }
-    to {
+    100% {
       background-position: -200% 0;
     }
   }
@@ -26,15 +26,14 @@ const { href = "#" } = Astro.props;
   rel="noopener noreferrer"
   role="link"
   class="
-    inline-flex items-center justify-center gap-2
+    inline-flex items-center gap-2
     px-4 py-1
     text-gray-300 text-sm font-medium
-    transition
-    border border-gray-800 rounded-full
-    bg-black badge-shine
-    hover:bg-gray-900 hover:border-gray-700 hover:text-white
-    focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2
-    active:bg-black
+    border border-gray-700 rounded-full
+    badge-shine
+    hover:border-white hover:text-white hover:bg-white/10
+    transition-colors duration-200 ease-in-out
+    focus:outline-none focus-visible:ring focus-visible:ring-blue-400 focus-visible:ring-offset-2
     max-w-fit
   "
 >
