@@ -3,57 +3,79 @@ import GitHub from "../assets/icons/GitHub.astro"
 import LinkedIn from "../assets/icons/LinkedIn.astro"
 import CVEN from "../assets/files/CV_Bryant_Ponce_EN.pdf"
 import CVES from "../assets/files/CV_Bryant_Ponce_ES.pdf"
-
-
 const currentYear = new Date().getFullYear()
 ---
 
-<footer
-  class="opacity-80 m-4 min-[375px]:pl-4 md:pl-0 mt-16 w-full mx-auto container lg:max-w-4xl md:max-w-2xl mb-10 flex flex-col md:flex-row justify-between items-center"
->
-  <div class="mb-4 md:mb-0 text-center md:text-left">
-    <span class="text-sm text-zinc-800/90 dark:text-zinc-200/90">
-      © {currentYear} <a class="hover:underline">Bryant Ponce</a>. Algunos derechos reservados
-    </span>
-    <p class="mt-1 text-xs italic text-gray-500 dark:text-gray-400">Aprendiendo cada dia algo nuevo</p>
+<footer class="w-full max-w-4xl mx-auto px-6 py-10 flex flex-col gap-8 select-none text-white/80">
+  <!-- Título y correo alineados a la izquierda -->
+  <div class="flex flex-col items-start gap-2">
+    <h2 class="text-2xl font-semibold select-text text-white">Colaboremos en tus proximos proyectos.</h2>
+
+    <a
+      href="mailto:bryant_ponce@outlook.com"
+      class="text-blue-400 text-lg font-medium cursor-pointer select-none hover:underline"
+      onmousedown="event.preventDefault()"
+      onselectstart="return false"
+      aria-label="Enviar correo a Bryant Ponce"
+    >
+      bryant_ponce@outlook.com
+    </a>
   </div>
 
-  <ul class="flex flex-wrap items-center text-sm font-medium dark:text-white/90 gap-6">
-    <li>
-      <a id="contacto" href="mailto:bryant_ponce@outlook.com" class="hover:underline" aria-label="Enviar correo a Bryant Ponce">Contacto</a>
-    </li>
-     <li>
+  <!-- Links y redes sociales en flex -->
+  <div class="flex flex-col md:flex-row justify-between items-center text-sm gap-4 md:gap-0 border-t border-white/20 pt-6">
+    
+    <nav class="flex gap-6">
+      <button
+        class="hover:text-blue-400 underline cursor-pointer"
+        onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+        aria-label="Regresar arriba"
+      >
+        Regresar arriba
+      </button>
       <a
         href={CVES}
         target="_blank"
         rel="noopener noreferrer"
-        class="hover:underline"
+        class="hover:text-blue-400 underline"
         aria-label="Descargar CV en Español"
       >
-       CV-Español
+        CV ES
       </a>
-    </li>
-    <li>
       <a
         href={CVEN}
         target="_blank"
         rel="noopener noreferrer"
-        class="hover:underline"
-        aria-label="Download CV in English"
+        class="hover:text-blue-400 underline"
+        aria-label="Descargar CV en Inglés"
       >
-        CV-English
+        CV EN
       </a>
-    </li>
-  </ul>
+    </nav>
 
-  <div class="flex gap-4 mt-4 md:mt-0">
-    <a href="https://linkedin.com/in/bryant-ponce" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="hover:text-blue-600 dark:hover:text-blue-400">
-      <!-- Puedes reemplazar con tu SVG o componente LinkedIn -->
-       <LinkedIn></LinkedIn>
-    </a>
-    <a href="https://github.com/BryantGit" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="hover:text-gray-900 dark:hover:text-gray-200">
-      <!-- Reemplaza por tu SVG o icono GitHub -->
-      <GitHub></GitHub>  
-    </a>
+    <div class="flex gap-6">
+      <a
+        href="https://linkedin.com/in/bryant-ponce"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn"
+        class="hover:text-blue-400 transition"
+      >
+        <LinkedIn />
+      </a>
+      <a
+        href="https://github.com/BryantGit"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub"
+        class="hover:text-blue-400 transition"
+      >
+        <GitHub />
+      </a>
+    </div>
   </div>
+
+  <p class="mt-6 text-xs text-white/40 select-text text-center md:text-left">
+    © {currentYear} Bryant Ponce. Todos los derechos reservados.
+  </p>
 </footer>
