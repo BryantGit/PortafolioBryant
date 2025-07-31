@@ -1,48 +1,62 @@
 ---
-// No necesitas lógica específica aquí, es puramente de presentación
-import yonne from '../assets/yone.jpeg';
-const images = [
-  yonne.src,
-  yonne.src,
-  yonne.src,
-  yonne.src,
-  yonne.src,
+import LinkedInIcon from '../assets/icons/LinkedIn.astro';
+//import CSharpIcon from '../assets/icons/CSharp.astro';
+import AngularIcon from '../assets/icons/Angular.astro';
+import JavaScriptIcon from '../assets/icons/Javascript.astro';
+import TypeScryptIcon from '../assets/icons/Angular.astro';
+import SQLIcon from '../assets/icons/Angular.astro';
+import OracelIcon from '../assets/icons/Angular.astro';
+import HtmlIcon from '../assets/icons/Angular.astro';
+import CSSIcon from '../assets/icons/Angular.astro';
+import GitIcon from '../assets/icons/Angular.astro';
+import GitHubIcon from '../assets/icons/Angular.astro';
+import AzureIcon from '../assets/icons/Angular.astro';
+import PostmanIcon from '../assets/icons/Angular.astro';
+import SwaggerIcon from '../assets/icons/Angular.astro';
+import FigmaIcon from '../assets/icons/Angular.astro';
+import BootstrapIcon from '../assets/icons/Angular.astro';
+
+const techs = [
+  { name: 'C#', icon: AngularIcon },
+  { name: 'Angular', icon: AngularIcon },
+  { name: 'JavaScript', icon: JavaScriptIcon },
+  { name: 'TypeScript', icon: AngularIcon },
+  { name: 'SQL Server', icon: AngularIcon },
+  { name: 'Oracle', icon: AngularIcon },
+  { name: 'HTML5', icon: AngularIcon },
+  { name: 'CSS', icon: AngularIcon },
+  { name: 'Git', icon: AngularIcon },
+  { name: 'GitHub', icon: AngularIcon },
+  { name: 'Azure DevOps', icon: AngularIcon },
+  { name: 'Postman', icon: AngularIcon },
+  { name: 'Swagger', icon: AngularIcon },
+  { name: 'Figma', icon: AngularIcon },
+  { name: 'Bootstrap', icon: AngularIcon },
+];
+const education = [
+  { title: 'Ingeniería en Sistemas', institution: 'Universidad XYZ', year: '2018 - 2022' },
 ];
 
-const techs = [".NET", "Angular", "React", "Vue", "Node.js", "TypeScript", "Python", "Docker"];
+const certificates = [
+  { title: 'PCAP - Python', issuer: 'Cisco Networking Academy' },
+  { title: 'CPA - C++', issuer: 'Cisco Networking Academy' },
+  { title: 'ESB: Small Business', issuer: 'Certiport' },
+];
 ---
-
 <style>
-  .carousel {
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-    width: 100%;
-    background: #1a1a1a;
-    border-radius: 1rem;
-    padding: 1rem 0;
-  }
-
   .carousel-track {
-    display: inline-block;
-    animation: scroll-left 20s linear infinite;
+    display: flex;
+    width: fit-content;
+    animation: scroll 20s linear infinite;
   }
 
-  .pill {
-    display: inline-block;
-    background-color: #3b82f6; /* azul */
-    color: white;
-    padding: 0.4rem 1rem;
-    border-radius: 9999px;
-    font-weight: 600;
-    margin-right: 1rem;
-    user-select: none;
-    white-space: nowrap;
+  .carousel:hover .carousel-track {
+    animation-play-state: paused;
   }
 
-  @keyframes scroll-left {
+  @keyframes scroll {
     0% {
-      transform: translateX(0);
+      transform: translateX(0%);
     }
     100% {
       transform: translateX(-50%);
@@ -50,57 +64,59 @@ const techs = [".NET", "Angular", "React", "Vue", "Node.js", "TypeScript", "Pyth
   }
 </style>
 
-<div class="grid grid-cols-1 lg:grid-cols-3 grid-rows-3 gap-4">
-
-  <!-- Columna 1: imagen arriba -->
-  <div class="grid grid-rows-2 gap-4 h-full">
-    <div class="rounded-2xl bg-neutral-900/60 border border-neutral-800 p-6 flex-1 flex flex-col justify-between hover:ring-1 hover:ring-blue-400 transition-all">
-      <img class="w-full h-full object-cover rounded-xl" src={yonne.src} alt="">
-    </div>
-   <div class="col-span-2 rounded-2xl bg-neutral-900/60 border border-neutral-800 p-6 flex-1 flex flex-col justify-between hover:ring-1 hover:ring-blue-400 transition-all">
-    </div>
-    
-  </div>
-
-  <!-- Columna 2: Perfil arriba -->
+<div class="rounded-2xl border border-white/10  p-6 flex flex-col gap-4 transition-shadow duration-300 hover:shadow-lg max-w-4xl mx-auto mb-12">
+  <p class="text-white/80 text-sm leading-relaxed">
+     Desarrollador Full-Stack con experiencia en la creación de aplicaciones web y de escritorio escalables utilizando Angular, .NET
+ (C#) y SQL Server. Hábil en arquitecturas multicapa, Domain-Driven Design (DDD), principios SOLID y Clean Architecture.
+<br>
+ Experiencia en desarrollo API, modelado de bases de datos,metodologías ágiles, CI/CD pipelines y control de versiones con Git y Azure DevOps.
   
-   <div class="grid grid-rows-[2fr_1fr] gap-4 h-full">
-      <div class="rounded-2xl bg-neutral-900/60 border border-neutral-800 p-6 flex-1 flex flex-col justify-between hover:ring-1 hover:ring-blue-400 transition-all">
-       <h3 class="text-white text-lg font-medium mb-2">👨‍💻 Perfil</h3>
-      <p class="text-gray-400 text-sm">
-        Soy desarrollador fullstack con experiencia en .NET, Angular, ABP y arquitecturas limpias. Me enfoco en soluciones modernas, escalables y bien diseñadas.
-      </p>
-    </div>
-
-      <div class="rounded-2xl bg-neutral-900/60 border border-neutral-800 p-4 hover:ring-1 hover:ring-blue-400 transition-all">
-        
-      
-      </div>
-      
-    </div>
-
-  <!-- Columna 3 completa (3 filas) -->
-  <div class="grid grid-rows-[2fr_1fr_0.5fr] gap-4 h-full">
-    <div class="rounded-2xl bg-neutral-900/60 border border-neutral-800 p-4 hover:ring-1 hover:ring-blue-400 transition-all">
+  
+  
+  </p>
+</div>
 
 
-    <div class="carousel">
-  <div class="carousel-track" style="width: max-content;">
-    {/* Duplicamos para que el carrusel sea infinito */}
-    {[...techs, ...techs].map((tech, i) => (
-      <span class="pill">{tech}</span>
-    ))}
+
+
+
+<!-- carrousel -->
+<div class="carousel overflow-hidden w-full max-w-5xl mx-auto mb-12 border border-white/10 rounded-2xl p-4">
+  <div class="carousel-track">
+    {techs.map((tech) => {
+      const Icon = tech.icon;
+      return (
+        <div class="flex-shrink-0 w-32 mx-2 rounded-xl p-4 flex flex-col items-center justify-center hover:ring-1 hover:ring-blue-400 transition-shadow">
+          <div class="size-8 mb-2">
+            <Icon />
+          </div>
+          <span class="text-white text-sm">{tech.name}</span>
+        </div>
+      );
+    })}
   </div>
 </div>
 
-    </div>
-    <div class="rounded-2xl bg-neutral-900/60 border border-neutral-800 p-4 hover:ring-1 hover:ring-blue-400 transition-all">
-      <h3 class="text-white text-base font-semibold mb-1">🌐 Idiomas</h3>
-      <p class="text-gray-400 text-sm">Español (nativo) <br /> Inglés (B2 - técnico)</p>
-    </div>
-    <div class="rounded-2xl bg-neutral-900/60 border border-neutral-800 p-4 flex items-center justify-center hover:ring-1 hover:ring-blue-400 transition-all">
-    <span class="text-blue-400 font-bold tracking-wide">📌 San Luis Potosi, MX</span>
-    </div>
+<!-- Education and Certifications Section -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
+  <div>
+    <h3 class="text-white text-xl font-bold mb-4">🎓 Educación</h3>
+    {education.map((edu) => (
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-4 flex flex-col gap-1 transition-shadow hover:shadow-lg">
+        <h4 class="text-white font-semibold">{edu.title}</h4>
+        <p class="text-white/80 text-sm">{edu.institution}</p>
+        <p class="text-white/60 text-xs">{edu.year}</p>
+      </div>
+    ))}
   </div>
 
+  <div>
+    <h3 class="text-white text-xl font-bold mb-4">📜 Certificaciones</h3>
+    {certificates.map((cert) => (
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-4 flex flex-col gap-1 transition-shadow hover:shadow-lg">
+        <h4 class="text-white font-semibold">{cert.title}</h4>
+        <p class="text-white/80 text-sm">{cert.issuer}</p>
+      </div>
+    ))}
+  </div>
 </div>
