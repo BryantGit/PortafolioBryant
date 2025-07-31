@@ -1,0 +1,106 @@
+---
+// No necesitas lógica específica aquí, es puramente de presentación
+import yonne from '../assets/yone.jpeg';
+const images = [
+  yonne.src,
+  yonne.src,
+  yonne.src,
+  yonne.src,
+  yonne.src,
+];
+
+const techs = [".NET", "Angular", "React", "Vue", "Node.js", "TypeScript", "Python", "Docker"];
+---
+
+<style>
+  .carousel {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+    background: #1a1a1a;
+    border-radius: 1rem;
+    padding: 1rem 0;
+  }
+
+  .carousel-track {
+    display: inline-block;
+    animation: scroll-left 20s linear infinite;
+  }
+
+  .pill {
+    display: inline-block;
+    background-color: #3b82f6; /* azul */
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    margin-right: 1rem;
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+</style>
+
+<div class="grid grid-cols-1 lg:grid-cols-3 grid-rows-3 gap-4">
+
+  <!-- Columna 1: imagen arriba -->
+  <div class="grid grid-rows-2 gap-4 h-full">
+    <div class="rounded-2xl bg-neutral-900/60 border border-neutral-800 p-6 flex-1 flex flex-col justify-between hover:ring-1 hover:ring-blue-400 transition-all">
+      <img class="w-full h-full object-cover rounded-xl" src={yonne.src} alt="">
+    </div>
+   <div class="col-span-2 rounded-2xl bg-neutral-900/60 border border-neutral-800 p-6 flex-1 flex flex-col justify-between hover:ring-1 hover:ring-blue-400 transition-all">
+    </div>
+    
+  </div>
+
+  <!-- Columna 2: Perfil arriba -->
+  
+   <div class="grid grid-rows-[2fr_1fr] gap-4 h-full">
+      <div class="rounded-2xl bg-neutral-900/60 border border-neutral-800 p-6 flex-1 flex flex-col justify-between hover:ring-1 hover:ring-blue-400 transition-all">
+       <h3 class="text-white text-lg font-medium mb-2">👨‍💻 Perfil</h3>
+      <p class="text-gray-400 text-sm">
+        Soy desarrollador fullstack con experiencia en .NET, Angular, ABP y arquitecturas limpias. Me enfoco en soluciones modernas, escalables y bien diseñadas.
+      </p>
+    </div>
+
+      <div class="rounded-2xl bg-neutral-900/60 border border-neutral-800 p-4 hover:ring-1 hover:ring-blue-400 transition-all">
+        
+      
+      </div>
+      
+    </div>
+
+  <!-- Columna 3 completa (3 filas) -->
+  <div class="grid grid-rows-[2fr_1fr_0.5fr] gap-4 h-full">
+    <div class="rounded-2xl bg-neutral-900/60 border border-neutral-800 p-4 hover:ring-1 hover:ring-blue-400 transition-all">
+
+
+    <div class="carousel">
+  <div class="carousel-track" style="width: max-content;">
+    {/* Duplicamos para que el carrusel sea infinito */}
+    {[...techs, ...techs].map((tech, i) => (
+      <span class="pill">{tech}</span>
+    ))}
+  </div>
+</div>
+
+    </div>
+    <div class="rounded-2xl bg-neutral-900/60 border border-neutral-800 p-4 hover:ring-1 hover:ring-blue-400 transition-all">
+      <h3 class="text-white text-base font-semibold mb-1">🌐 Idiomas</h3>
+      <p class="text-gray-400 text-sm">Español (nativo) <br /> Inglés (B2 - técnico)</p>
+    </div>
+    <div class="rounded-2xl bg-neutral-900/60 border border-neutral-800 p-4 flex items-center justify-center hover:ring-1 hover:ring-blue-400 transition-all">
+    <span class="text-blue-400 font-bold tracking-wide">📌 San Luis Potosi, MX</span>
+    </div>
+  </div>
+
+</div>
