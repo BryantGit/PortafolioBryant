@@ -45,48 +45,65 @@ const certificates = [
 ---
 <style>
   .carousel-track {
-    display: flex;
-    width: fit-content;
-    animation: scroll 20s linear infinite;
-  }
+  display: flex;
+  width: fit-content;
+  animation: scroll 25s linear infinite;
+}
 
-  .carousel:hover .carousel-track {
-    animation-play-state: paused;
-  }
 
   @keyframes scroll {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
 </style>
 
-<div class="rounded-2xl border border-white/10  p-6 flex flex-col gap-4 transition-shadow duration-300 hover:shadow-lg max-w-4xl mx-auto mb-12">
-  <p class="text-white/80 text-sm leading-relaxed">
-     Desarrollador Full-Stack con experiencia en la creación de aplicaciones web y de escritorio escalables utilizando Angular, .NET
- (C#) y SQL Server. Hábil en arquitecturas multicapa, Domain-Driven Design (DDD), principios SOLID y Clean Architecture.
-<br>
- Experiencia en desarrollo API, modelado de bases de datos,metodologías ágiles, CI/CD pipelines y control de versiones con Git y Azure DevOps.
-  
-  
-  
+
+
+
+<div class="rounded-2xl border border-blue-400/20 p-6 flex flex-col gap-4 transition duration-300 hover:shadow-lg hover:border-blue-400/40 max-w-4xl mx-auto mb-12 backdrop-blur-md bg-white/5">
+  <p class="text-white/90 text-base leading-relaxed">
+    Desarrollador Full-Stack con experiencia en la creación de aplicaciones web y de escritorio escalables utilizando 
+    <span class="text-blue-400">Angular</span>, <span class="text-blue-400">.NET (C#)</span> y <span class="text-blue-400">SQL Server</span>. 
+    Hábil en arquitecturas multicapa, Domain-Driven Design (DDD), principios SOLID y Clean Architecture.
+  </p>
+  <p class="text-white/80 text-base leading-relaxed">
+    Experiencia en desarrollo API, modelado de bases de datos, metodologías ágiles, CI/CD pipelines y control de versiones 
+    con Git y Azure DevOps.
   </p>
 </div>
 
 
+<!-- Education and Certifications Section -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+  <div>
+    <h2 class="text-xl font-bold text-white mb-4">🎓 Educación</h2>
+    {education.map((edu) => (
+      <div class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-blue-400/40 hover:shadow-lg transition mb-3">
+        <h4 class="text-white font-semibold">{edu.title}</h4>
+        <p class="text-white/80 text-sm">{edu.institution}</p>
+        <p class="text-white/60 text-xs">{edu.year}</p>
+      </div>
+    ))}
+  </div>
 
-
+  <div>
+    <h2 class="text-xl font-bold text-white mb-4">📜 Certificaciones</h2>
+    {certificates.map((cert) => (
+      <div class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-blue-400/40 hover:shadow-lg transition mb-3">
+        <h4 class="text-white font-semibold">{cert.title}</h4>
+        <p class="text-white/80 text-sm">{cert.issuer}</p>
+      </div>
+    ))}
+  </div>
+</div>
 
 <!-- carrousel -->
-<div class="carousel overflow-hidden w-full max-w-5xl mx-auto mb-12 border border-white/10 rounded-2xl p-4">
+<div class="carousel overflow-hidden w-full max-w-5xl mx-auto mb-12 border border-white/10 rounded-2xl p-4 backdrop-blur-md bg-white/5">
   <div class="carousel-track">
     {techs.map((tech) => {
       const Icon = tech.icon;
       return (
-        <div class="flex-shrink-0 w-32 mx-2 rounded-xl p-4 flex flex-col items-center justify-center hover:ring-1 hover:ring-blue-400 transition-shadow">
+        <div class="flex-shrink-0 w-32 mx-2 rounded-xl p-4 flex flex-col items-center justify-center hover:ring-1 hover:ring-blue-400/60 hover:shadow-blue-400/20 hover:shadow-lg transition">
           <div class="size-8 mb-2">
             <Icon />
           </div>
@@ -96,27 +113,49 @@ const certificates = [
     })}
   </div>
 </div>
+<!-- De un vistazo -->
+<section class="py-16">
+  <h2 class="text-3xl font-bold text-white text-center mb-12">👀 De un vistazo</h2>
 
-<!-- Education and Certifications Section -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
-  <div>
-    <h3 class="text-white text-xl font-bold mb-4">🎓 Educación</h3>
-    {education.map((edu) => (
-      <div class="rounded-2xl border border-white/10 bg-white/5 p-4 flex flex-col gap-1 transition-shadow hover:shadow-lg">
-        <h4 class="text-white font-semibold">{edu.title}</h4>
-        <p class="text-white/80 text-sm">{edu.institution}</p>
-        <p class="text-white/60 text-xs">{edu.year}</p>
-      </div>
-    ))}
-  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto px-4">
+    <div 
+      class="relative p-8 rounded-2xl bg-white/5 backdrop-blur-md border-2 border-transparent transition duration-300"
+      onmousemove="followCursor(event, this)"
+      onmouseleave="resetBorder(this)"
+    >
+      <h3 class="text-5xl font-bold text-blue-400 mb-2">5+</h3>
+      <p class="text-lg text-white/80">Años de experiencia</p>
+    </div>
 
-  <div>
-    <h3 class="text-white text-xl font-bold mb-4">📜 Certificaciones</h3>
-    {certificates.map((cert) => (
-      <div class="rounded-2xl border border-white/10 bg-white/5 p-4 flex flex-col gap-1 transition-shadow hover:shadow-lg">
-        <h4 class="text-white font-semibold">{cert.title}</h4>
-        <p class="text-white/80 text-sm">{cert.issuer}</p>
-      </div>
-    ))}
+    <div 
+      class="relative p-8 rounded-2xl bg-white/5 backdrop-blur-md border-2 border-transparent transition duration-300"
+      onmousemove="followCursor(event, this)"
+      onmouseleave="resetBorder(this)"
+    >
+      <h3 class="text-5xl font-bold text-blue-400 mb-2">20+</h3>
+      <p class="text-lg text-white/80">Proyectos completados</p>
+    </div>
+
+    <div 
+      class="relative p-8 rounded-2xl bg-white/5 backdrop-blur-md border-2 border-transparent transition duration-300"
+      onmousemove="followCursor(event, this)"
+      onmouseleave="resetBorder(this)"
+    >
+      <h3 class="text-5xl font-bold text-blue-400 mb-2">15+</h3>
+      <p class="text-lg text-white/80">Tecnologías dominadas</p>
+    </div>
   </div>
-</div>
+</section>
+
+<script>
+  function followCursor(e: MouseEvent, card: HTMLElement) {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    card.style.borderImage = `radial-gradient(circle at ${x}px ${y}px, #3b82f6, transparent 80%) 1`;
+  }
+
+  function resetBorder(card: HTMLElement) {
+    card.style.borderImage = "none";
+  }
+</script>
