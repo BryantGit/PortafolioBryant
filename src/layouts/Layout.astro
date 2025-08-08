@@ -15,16 +15,15 @@ import '@fontsource-variable/onest';
 		<meta name="generator" content={Astro.generator} />
 		<title>Bryant Ponce</title>
 	</head>
-	<body>
-		<!-- Background gradient 
-		-->
-		<div class="fixed inset-0 z-[-2] h-screen w-screen bg-black bg-[radial-gradient(ellipse_100%_100%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+	<body >
+		<!-- Gradiente radial -->
+  <div class="fixed inset-0 -z-10 bg-black bg-[radial-gradient(ellipse_80%_80%_at_50%_20%,rgba(96,165,250,0.15),transparent)]"></div>
 
-		<!-- Animated background elements 
-    -->
-		<div class="absolute w-10 h-4 bg-blue-500 rounded-full opacity-20 animate-ping" style="top: 20vh; left: 30vw"></div>
-    <div class="absolute w-16 h-4 bg-purple-500 rounded-full opacity-10 animate-pulse" style="top: 60vh; left: 65vw"></div>
-    <div class="absolute w-8 h-4 bg-pink-500 rounded-full opacity-30 animate-bounce" style="top: 50vh; left: 25vw"></div>
+  <!-- Blobs animados azules -->
+  <div class="absolute w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob" style="top: 10%; left: 20%;"></div>
+  <div class="absolute w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000" style="top: 50%; left: 60%;"></div>
+  <div class="absolute w-72 h-72 bg-sky-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000" style="top: 30%; left: 80%;"></div>
+
 		
 		<Header/>
 		<slot />
