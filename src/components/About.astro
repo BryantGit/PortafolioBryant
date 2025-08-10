@@ -2,64 +2,90 @@
 import LinkedInIcon from '../assets/icons/LinkedIn.astro';
 //import CSharpIcon from '../assets/icons/CSharp.astro';
 import AngularIcon from '../assets/icons/Angular.astro';
+import AstroIcon from '../assets/icons/AstroJS.astro';
+import AzureIcon  from '../assets/icons/Azure.astro';
+import BootstrapIcon from '../assets/icons/Bootstrap.astro';
+import CsharpIcon from '../assets/icons/Csharp.astro';
+import CssIcon from '../assets/icons/Css.astro';
+import EmailIcon from '../assets/icons/Email.astro';
+import GitIcon from '../assets/icons/Git.astro';
+import GitHubIcon from '../assets/icons/GitHub.astro';
+import HtmlIcon from '../assets/icons/Html.astro';
 import JavaScriptIcon from '../assets/icons/Javascript.astro';
-import TypeScryptIcon from '../assets/icons/Angular.astro';
-import SQLIcon from '../assets/icons/Angular.astro';
-import OracelIcon from '../assets/icons/Angular.astro';
-import HtmlIcon from '../assets/icons/Angular.astro';
-import CSSIcon from '../assets/icons/Angular.astro';
-import GitIcon from '../assets/icons/Angular.astro';
-import GitHubIcon from '../assets/icons/Angular.astro';
-import AzureIcon from '../assets/icons/Angular.astro';
-import PostmanIcon from '../assets/icons/Angular.astro';
-import SwaggerIcon from '../assets/icons/Angular.astro';
-import FigmaIcon from '../assets/icons/Angular.astro';
-import BootstrapIcon from '../assets/icons/Angular.astro';
-
+import LaravelIcon from '../assets/icons/Laravel.astro';
+import LenguajeIcon from '../assets/icons/Lenguaje.astro';
+import LinkInlineIcon from './LinkInline.astro';
+import NodeIcon from '../assets/icons/Node.astro';
+import PhpIcon from '../assets/icons/Php.astro';
+import PythonIcon from '../assets/icons/Python.astro';
+import ReactIcon from '../assets/icons/React.astro';
+import SqlIcon from '../assets/icons/Sql.astro';
+import TailwindIcon from '../assets/icons/TailWind.astro';
+import TypescriptIcon from '../assets/icons/TypeScript.astro';
+import WordpressIcon from '../assets/icons/Wordpress.astro';
 const techs = [
-  { name: 'C#', icon: AngularIcon },
   { name: 'Angular', icon: AngularIcon },
+  { name: 'Azure DevOps', icon: AzureIcon },
+  { name: 'Astro', icon: AstroIcon },
   { name: 'JavaScript', icon: JavaScriptIcon },
-  { name: 'TypeScript', icon: AngularIcon },
-  { name: 'SQL Server', icon: AngularIcon },
-  { name: 'Oracle', icon: AngularIcon },
-  { name: 'HTML5', icon: AngularIcon },
-  { name: 'CSS', icon: AngularIcon },
-  { name: 'Git', icon: AngularIcon },
-  { name: 'GitHub', icon: AngularIcon },
-  { name: 'Azure DevOps', icon: AngularIcon },
-  { name: 'Postman', icon: AngularIcon },
-  { name: 'Swagger', icon: AngularIcon },
-  { name: 'Figma', icon: AngularIcon },
-  { name: 'Bootstrap', icon: AngularIcon },
+  { name: 'TypeScript', icon: TypescriptIcon },
+  { name: 'C#', icon: CsharpIcon },
+  { name: 'Node.js', icon: NodeIcon },
+  { name: 'React', icon: ReactIcon },
+  { name: 'PHP', icon: PhpIcon },
+  { name: 'Python', icon: PythonIcon },
+  { name: 'SQL Server', icon: SqlIcon },
+  { name: 'HTML5', icon: HtmlIcon },
+  { name: 'CSS3', icon: CssIcon },
+  { name: 'Bootstrap', icon: BootstrapIcon },
+  { name: 'Tailwind CSS', icon: TailwindIcon },
+  { name: 'Git', icon: GitIcon },
+  { name: 'GitHub', icon: GitHubIcon },
+  { name: 'Laravel', icon: LaravelIcon },
+  { name: 'Lenguaje de Programación', icon: LenguajeIcon },
+  { name: 'WordPress', icon: WordpressIcon },
+  
 ];
 const education = [
-  { title: 'Ingeniería en Sistemas', institution: 'Universidad XYZ', year: '2018 - 2022' },
+  { title: 'Ingeniería en tecnologias de la informacion', institution: 'Universidad Politecnica de San Luis Potosi', year: '2018 - 2024' },
+  { title: 'Tecnico en Ofimatica', institution: 'Centro bachillerato tecnologico numero 123', year: '2015 - 2018' },
 ];
 
 const certificates = [
-  { title: 'PCAP - Python', issuer: 'Cisco Networking Academy' },
-  { title: 'CPA - C++', issuer: 'Cisco Networking Academy' },
-  { title: 'ESB: Small Business', issuer: 'Certiport' },
+  { title: 'Partner: PCAP - Programming Essentials in Python', issuer: 'Cisco Networking Academy' },
+  { title: 'Partner: CPA - Programming Essentials in C++', issuer: 'Cisco Networking Academy' },
+  { title: 'Partner: CPA - Programming Essentials in C', issuer: 'Cisco Networking Academy' },
+  { title: 'ESB: Small Busines and Small Business v.2', issuer: 'Certiport' },
+  { title: 'Introduction to Data Science', issuer: 'Cisco' },
+  { title: 'AWS Academy Graduate', issuer: 'Amazon' },
+  { title: 'Networking Academy', issuer: 'Cisco' },
+  { title: 'Python Essentials 1', issuer: 'Cisco' },
+  { title: 'Networking Essentials', issuer: 'Cisco' },
+  { title: 'Unity Certified User: Programmer', issuer: 'Unity technologies' },
+  { title: 'Partner: NDG Linux Essentials', issuer: 'Cisco' },
+  { title: 'IntroductionIOT', issuer: 'Cisco' },
 ];
 ---
 <!-- Introducción -->
-<div class="rounded-2xl border border-blue-400/20 p-6 flex flex-col gap-4 transition duration-300 hover:shadow-lg hover:border-blue-400/40 max-w-4xl mx-auto mb-12 backdrop-blur-md bg-white/5">
-  <p class="text-white/90 text-base leading-relaxed">
-    Desarrollador Full-Stack con experiencia en la creación de aplicaciones web y de escritorio escalables utilizando 
-    <span class="text-blue-400">Angular</span>, <span class="text-blue-400">.NET (C#)</span> y <span class="text-blue-400">SQL Server</span>. 
-    Hábil en arquitecturas multicapa, Domain-Driven Design (DDD), principios SOLID y Clean Architecture.
-  </p>
-  
-  <p class="text-white/80 text-base leading-relaxed">
-    Experiencia sólida en desarrollo de <span class="text-blue-400">APIs RESTful</span>, modelado de bases de datos relacionales, implementación de pipelines de integración y entrega continua (<span class="text-blue-400">CI/CD</span>) y control de versiones con <span class="text-blue-400">Git</span> y <span class="text-blue-400">Azure DevOps</span>.
-    Familiaridad con metodologías ágiles como <span class="text-blue-400">Scrum</span> y <span class="text-blue-400">Kanban</span>.
-  </p>
-</div>
+ <section>
+  <div class="rounded-2xl border border-blue-400/20 p-8 flex flex-col gap-6 transition duration-300 hover:shadow-lg hover:border-blue-400/40 max-w-4xl mx-auto mb-12 backdrop-blur-md bg-white/5">
+    <p class="text-white/90 text-base leading-relaxed">
+      Desarrollador Full-Stack con experiencia en la creación de aplicaciones web y de escritorio escalables utilizando 
+      <span class="text-blue-400">Angular</span>, <span class="text-blue-400">.NET (C#)</span> y <span class="text-blue-400">SQL Server</span>. 
+      Hábil en arquitecturas multicapa, Domain-Driven Design (DDD), principios SOLID y Clean Architecture.
+    </p>
+    
+    <p class="text-white/80 text-base leading-relaxed">
+      Experiencia sólida en desarrollo de <span class="text-blue-400">APIs RESTful</span>, modelado de bases de datos relacionales, implementación de pipelines de integración y entrega continua (<span class="text-blue-400">CI/CD</span>) y control de versiones con <span class="text-blue-400">Git</span> y <span class="text-blue-400">Azure DevOps</span>.
+      Familiaridad con metodologías ágiles como <span class="text-blue-400">Scrum</span> y <span class="text-blue-400">Kanban</span>.
+    </p>
+  </div>
+</section>
+
 
 
 <!-- De un vistazo -->
-<section class="py-16">
+<section class="py-14">
   <h2 class="text-3xl font-bold text-white text-center mb-12">De un vistazo</h2>
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto px-4">
@@ -80,27 +106,9 @@ const certificates = [
   </div>
 </section>
 
-
-
-<!-- carrousel -->
-<div class="carousel overflow-hidden w-full max-w-5xl mx-auto mb-12 border border-white/10 rounded-2xl p-4 backdrop-blur-md bg-white/5">
-  <div class="carousel-track">
-    {techs.map((tech) => {
-      const Icon = tech.icon;
-      return (
-        <div class="flex-shrink-0 w-32 mx-2 rounded-xl p-4 flex flex-col items-center justify-center hover:ring-1 hover:ring-blue-400/60 hover:shadow-blue-400/20 hover:shadow-lg transition">
-          <div class="size-8 mb-2">
-            <Icon />
-          </div>
-          <span class="text-white text-sm">{tech.name}</span>
-        </div>
-      );
-    })}
-  </div>
-</div>
-
 <!-- Education and Certifications Section -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+ <section class="py-16">
+   <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
   <div>
     <h2 class="text-xl font-bold text-white mb-4">🎓 Educación</h2>
     {education.map((edu) => (
@@ -114,16 +122,58 @@ const certificates = [
 
   <div>
     <h2 class="text-xl font-bold text-white mb-4">📜 Certificaciones</h2>
-    {certificates.map((cert) => (
-      <div class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-blue-400/40 hover:shadow-lg transition mb-3">
-        <h4 class="text-white font-semibold">{cert.title}</h4>
-        <p class="text-white/80 text-sm">{cert.issuer}</p>
-      </div>
-    ))}
+
+<div class="max-h-80 overflow-y-auto pr-4 space-y-3 scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-transparent hover:scrollbar-thumb-blue-400 transition">
+      {certificates.map((cert) => (
+        <div class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-blue-400/40 hover:shadow-lg transition">
+          <h4 class="text-white font-semibold">{cert.title}</h4>
+          <p class="text-white/80 text-sm">{cert.issuer}</p>
+        </div>
+      ))}
+    </div>
   </div>
 </div>
 
+</section>
+
+
+
+<!-- carrousel -->
+<section>
+  <div class="carousel overflow-hidden w-full max-w-5xl mx-auto mb-12 border border-white/10 rounded-2xl p-6 backdrop-blur-md bg-white/5">
+    <div class="carousel-track flex gap-4">
+      {techs.map((tech) => {
+        const Icon = tech.icon;
+        return (
+          <div class="flex-shrink-0 w-32 rounded-xl p-4 flex flex-col items-center justify-center hover:ring-1 hover:ring-blue-400/60 hover:shadow-blue-400/20 hover:shadow-lg transition">
+            <div class="size-8 mb-2">
+              <Icon />
+            </div>
+            <span class="text-white text-sm">{tech.name}</span>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
+
+
+
 <style>
+  div::-webkit-scrollbar {
+  width: 6px;
+}
+div::-webkit-scrollbar-track {
+  background: transparent;
+}
+div::-webkit-scrollbar-thumb {
+  background-color: rgba(59, 130, 246, 0.6);
+  border-radius: 3px;
+}
+div:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(59, 130, 246, 0.8);
+}
   .carousel-track {
   display: flex;
   width: fit-content;
