@@ -12,16 +12,28 @@ interface Props {
   description: string
   technologies?: Technology[]
   github?: string
-  demo?: string
+  demo?: string,
+  visibility?: string
 }
 
-const { name, description, technologies = [], github, demo } = Astro.props
+const { name, description, technologies = [], github, demo, visibility } = Astro.props
 ---
 <div class="rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col gap-4 transition-shadow duration-300 hover:shadow-lg">
+  <!-- Etiqueta Pública/Privada -->
+  {visibility && (
+    <span class={` w-15 text-[10px] font-medium px-2 py-0.5 rounded-full border  
+    ${visibility === "Público" ? "bg-green-500/10 text-green-400 border-green-400/30"
+     : "bg-red-500/10 text-red-400 border-red-400/30"}`}>
+      {visibility}
+    </span>
+  )}
+
+  
   <!-- Título -->
   <h3 class="text-xl font-bold text-white">{name}</h3>
   
-
+<!-- Descripción -->
+  <p class="text-sm text-white/80 leading-relaxed text-pretty">{description}</p>
   <!-- Tecnologías -->
   <div class="flex flex-wrap gap-2">
     {technologies.map(tech => (
@@ -32,8 +44,7 @@ const { name, description, technologies = [], github, demo } = Astro.props
     ))}
   </div>
 
-  <!-- Descripción -->
-  <p class="text-sm text-white/80 leading-relaxed">{description}</p>
+  
 
   <!-- Botones -->
   <div class="mt-auto flex gap-3 pt-2">
